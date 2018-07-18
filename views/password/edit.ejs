@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Edit <%=password.title%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passwords">Passwords Index</a></li>
+      </ul>
+    </nav>
+  </header><!-- /header -->
+  <main>
+    <h2>Password attributes</h2>
+    <form action="/passwords/<%=password.id%>?_method=PUT" method="POST">
+      <select name="userId">
+        <% for(let i = 0; i < users.length; i++){ %>
+
+
+        <option value="<%=users[i].id%>"
+
+          <% if(users[i]._id.toString() === passworduser._id.toString()){%>
+          selected
+          <% } %>
+          > <%=users[i].name%></option>
+        <% } %>
+      </select>
+
+
+
+
+
+      <input type="text" name="title" value="<%=password.title%>"><br>
+      <textarea name="body"><%=password.body%></textarea><br/>
+      <button type="submit">Update password</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Show Page for <%=password.title%></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passwords">password Index</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>password Attributes</h2>
+      <ul>
+        <li>Title: <%=password.title%></li>
+        <li>Body: <%=password.body%></li>
+      </ul>
+    </section>
+      <h1><%=password.title%></h1>
+        <small>by: <a href="/users/<%=user._id%>"><%=user.name%></a></small>
+
+    <section>
+      <a href="/passwords/<%=password.id%>/edit">Edit</a>
+    </section>
+
+    <section>
+      <form action="/passwords/<%=password.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete password</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

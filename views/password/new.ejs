@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Create an password</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/passwords">passwords Index</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/passwords" method="post">
+    <select name="userId">
+        <% for(let i = 0; i < users.length; i++) { %>
+            <option value="<%=users[i]._id%>"><%=users[i].name%></option>
+        <% } %>
+    </select><br/>
+    <input type="text" name="title" /><br/>
+    <textarea name="body"></textarea><br/>
+    <input type="submit" value="Publish password"/>
+</form>
+  </main>
+
+</body>
+</html>
